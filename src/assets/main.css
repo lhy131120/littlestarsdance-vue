@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url("https://font.emtech.cc/css/GenSenRoundedJP");
+
+@import 'tailwindcss';
+
+@theme {
+
+  /* Font size */
+  --text-5xl: 2.5rem;
+  --text-4xl: 2rem;
+  --text-3xl: 1.75rem;
+  --text-2xl: 1.5rem;
+  --text-xl: 1.25rem;
+  --text-lg: 1.125rem;
+  --text-md: 1rem;
+  --text-sm: 0.875rem;
+
+  /* Font Family */
+  --default-font-family: "GenSenRoundedJP";
+  --font-noto-tc: "Noto Sans TC", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  /* Line Height */
+  --text-tiny--line-height: 1.2;
+  --text-base--line-height: 1.5;
+
+  /* Breakpoint */
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 62rem;
+  --breakpoint-xl: 82.5rem;
+
+  /* Color */
+  --color-primary-10: #FFF9E2;
+  --color-primary-20: #FFEF8E;
+  --color-primary-30: #FFDD4A;
+  --color-primary-40: #F5C700;
+  --color-primary-50: #A46305;
+
+  --color-accent-10: #C5E4Ef;
+  --color-accent-20: #8BBFEC;
+  --color-accent-30: #2A8ADC;
+  --color-accent-40: #027FEA;
+  --color-accent-50: #004B8B;
+
+  --color-grayscale-10: #F1F1F1;
+  --color-grayscale-20: #E8E8E8;
+  --color-grayscale-30: #D1D1D1;
+  --color-grayscale-40: #AAAAAA;
+  --color-grayscale-50: #8E8E8E;
+  --color-grayscale-60: #797979;
+  --color-grayscale-70: #666666;
+  --color-grayscale-80: #525252;
+  --color-grayscale-90: #404040;
+
+  --color-basic-10: #F2F2EB;
+  --color-basic-20: #FFFFFF;
+  --color-basic-30: #111111;
+
+}
+
+@media (min-width: 768px) {
+  :root {
+    --text-5xl: 2.5rem;
+    --text-4xl: 2rem;
+    --text-3xl: 1.75rem;
+    --text-2xl: 1.5rem;
+    --text-xl: 1.25rem;
+    --text-lg: 1.125rem;
+    --text-md: 1rem;
+    --text-sm: 0.875rem;
+  }
+}
+
+@layer base {
+  body {
+    @apply leading-normal tracking-[1%]
+  }
+
+  p {
+    @apply mb-4 leading-normal
+  }
+
+  .container {
+    @apply mx-auto px-3
+  }
+}
+
+@layer components {}
+
+@layer utilities {}
