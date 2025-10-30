@@ -1,4 +1,5 @@
 <script setup>
+import HomeHeroView from '@/components/HomeHeroView.vue';
 </script>
 
 <template>
@@ -19,5 +20,6 @@
     <p class="text-lg">中文字範例 / lg:18p</p>
     <p class="text-md">中文字範例 / md:16p</p>
     <p class="text-sm">中文字範例 / sm:14p</p> -->
+    <HomeHeroView />
   </main>
 </template>

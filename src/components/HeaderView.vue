@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import router from '../router'
+import BorderButton from './BorderButtonView.vue';
 
 const isMobileMenuOpen = ref(false);
 
@@ -160,9 +161,13 @@ onUnmounted(() => {
         <div class="relative mb-4">
           <input id="mainSearch" type="text" placeholder="搜尋..." class="bg-white py-[11px] ps-8 pe-[52px] border border-primary-50 rounded-lg w-full text-xl text-grayscale-70 tracking-[1%]" />
         </div>
-        <nav class="flex flex-col gap-4">
+        <nav class="flex flex-col gap-4 mb-12">
           <router-link @click="isMobileMenuOpen = false" v-for="mobileNav in routes" :key="mobileNav.path" :to="mobileNav.path" class="px-3 py-2 text-xl tracking-[1%] font-medium text-grayscale-90 hover:text-primary-50 focus:text-primary-50 block w-full"> {{ mobileNav.name_tc.trim() }} </router-link>
         </nav>
+        <div class="flex flex-col gap-4">
+          <BorderButton :content="'會員專區'" />
+          <BorderButton :content="'登出'" />
+        </div>
       </div>
     </div>
   </header>

@@ -72,6 +72,14 @@
 }
 
 @layer base {
+
+  *,
+  *:before,
+  *:after {
+    font-weight: 500;
+    outline: none;
+  }
+
   body {
     @apply leading-normal tracking-[1%]
   }
