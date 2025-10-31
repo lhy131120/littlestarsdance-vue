@@ -5,6 +5,19 @@
 
 @theme {
 
+  /* Hero aspect ratio */
+  --aspect-home-hero: 1920 / 960;
+  --aspect-home-hero-mobile: 375 / 702;
+
+  /* Letter spacing */
+  --tracking-1: 0.01em;
+  --tracking-5: 0.05em;
+  --tracking-10: 0.1em;
+  --tracking-15: 0.15em;
+
+  /* Line height */
+  --leading-tight: 1.2;
+
   /* Font size */
   --text-5xl: 2.5rem;
   --text-4xl: 2rem;
@@ -69,6 +82,7 @@
     --text-md: 1rem;
     --text-sm: 0.875rem;
   }
+
 }
 
 @layer base {
@@ -78,10 +92,11 @@
   *:after {
     font-weight: 500;
     outline: none;
+    letter-spacing: 0.05em;
   }
 
   body {
-    @apply leading-normal tracking-[1%]
+    @apply leading-normal
   }
 
   p {

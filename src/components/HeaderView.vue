@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import router from '../router'
 import BorderButton from './BorderButtonView.vue';
 
@@ -13,6 +13,26 @@ const checkScreenSize = () => {
     isMobileMenuOpen.value = false
   }
 }
+
+// 新增：鎖定/解鎖body滾動的函數
+const toggleBodyScroll = (locked) => {
+  const body = document.body;
+  if (locked) {
+    // 鎖定滾動：隱藏滾動條，並防止iOS彈回
+    body.style.overflow = 'hidden';
+    body.style.position = 'fixed';
+    body.style.width = '100%';
+  } else {
+    // 解鎖：恢復預設
+    body.style.overflow = '';
+    body.style.position = '';
+    body.style.width = '';
+  }
+};
+
+watch(isMobileMenuOpen,(newVal) => {
+  toggleBodyScroll(newVal);
+})
 
 onMounted(() => {
   checkScreenSize() // 初始檢查
@@ -156,7 +176,7 @@ onUnmounted(() => {
       </div>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobileMenu" :class="['fixed top-[52px] md:top-[61px] right-0 w-full h-dvh bg-primary-10 transition-all duration-300 ease-in-out', {'translate-x-full' : !isMobileMenuOpen, 'translate-x-0 opacity-100' : isMobileMenuOpen}]">
+    <div id="mobileMenu" :class="['fixed top-[52px] md:top-[61px] right-0 w-full h-dvh bg-primary-10 transition-all duration-300 ease-in-out z-50', {'translate-x-full' : !isMobileMenuOpen, 'translate-x-0 opacity-100' : isMobileMenuOpen}]">
       <div class="py-6 px-3">
         <div class="relative mb-4">
           <input id="mainSearch" type="text" placeholder="搜尋..." class="bg-white py-[11px] ps-8 pe-[52px] border border-primary-50 rounded-lg w-full text-xl text-grayscale-70 tracking-[1%]" />
